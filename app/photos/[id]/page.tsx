@@ -1,3 +1,4 @@
+import DownloadButton from "@/components/DownloadButton";
 import { createClient } from "@/utils/supabase/server";
 import Image from "next/image";
 
@@ -24,13 +25,7 @@ export default function PhotoPage({ params }: Props) {
         height={600}
         className="shadow-2xl"
       />
-      <a
-        href={photo.publicUrl}
-        download
-        className="float-right mt-4 px-6 py-3 rounded bg-green-500 text-white font-semibold text-sm active:bg-green-600"
-      >
-        다운로드
-      </a>
+      <DownloadButton url={photo.publicUrl} fileName="image.png" />
     </div>
   );
 }
